@@ -1,5 +1,4 @@
 import { observable, action, reaction, computed } from "mobx";
-import { any } from "C:/Users/ddelo/AppData/Local/Microsoft/TypeScript/3.3/node_modules/@types/prop-types";
 import { timingSafeEqual } from "crypto";
 
 interface INews {
@@ -16,12 +15,13 @@ interface INews {
   content: string;
 }
 
-interface User {
+interface IUser {
   email: string;
 }
 
 class newsStore {
   @observable Favorite: INews[] = [];
+  @observable Users: IUser[] = [];
 
   @action
   addNews(news: INews) {
@@ -30,7 +30,7 @@ class newsStore {
 
   @computed
   get addedNews() {
-      return this.Favorite;
+    return this.Favorite;
   }
 }
 
