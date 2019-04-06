@@ -17,9 +17,11 @@ interface INews {
 
 interface IUser {
   email: string;
+  password: string;
+  idUserArticle: number;
 }
 
-class newsStore {
+export default class newsStore {
   @observable Favorite: INews[] = [];
   @observable Users: IUser[] = [];
 
@@ -34,4 +36,3 @@ class newsStore {
   }
 }
 
-export const NewsStore = new newsStore();
